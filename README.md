@@ -6,7 +6,7 @@
 </div>
 
 [![npm version](https://img.shields.io/npm/v/nexcss-framework.svg)](https://www.npmjs.com/package/nexcss-framework)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 [![Downloads](https://img.shields.io/npm/dm/nexcss-framework.svg)](https://www.npmjs.com/package/nexcss-framework)
 [![GitHub stars](https://img.shields.io/github/stars/nexcss/nexcss.svg)](https://github.com/nexcss/nexcss/stargazers)
 [![Build Status](https://github.com/nexcss/nexcss/workflows/CI/badge.svg)](https://github.com/nexcss/nexcss/actions)
@@ -500,9 +500,7 @@ Visit our [comprehensive documentation](https://docs.nexcss.com) for:
 
 We love your input! Check out our [Contributing Guide](CONTRIBUTING.md) for ways to get started.
 
-## 📄 License
 
-MIT © [NexCSS Team](LICENSE)
 
 ## 💬 Community
 
@@ -513,7 +511,7 @@ MIT © [NexCSS Team](LICENSE)
 ---
 
 <div align="center">
-  <p>Built with ❤️ by the NexCSS Team</p>
+  <p>Built with ❤️ by the NexVisora Team</p>
   <p>
     <a href="https://github.com/sponsors/nexcss">Support NexCSS</a> •
     <a href="https://nexcss.com/blog">Blog</a> •
