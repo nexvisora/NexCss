@@ -1,6 +1,37 @@
-export function Card({ title, description, image, tags, action }) {
+export function Card({ 
+  title, 
+  description, 
+  image, 
+  tags, 
+  action,
+  // Layout props
+  width = 'auto',
+  height = 'auto',
+  padding = '6',
+  margin = '0',
+  display = 'block',
+  // Flex props
+  flex = false,
+  flexDirection = 'column',
+  alignItems = 'stretch',
+  justifyContent = 'start',
+  // Typography props
+  titleSize = 'lg',
+  descriptionSize = 'base',
+  fontWeight = 'semibold',
+}) {
+  const cardClasses = `
+    bg-white dark:bg-gray-800 
+    rounded-lg shadow-md overflow-hidden 
+    transition-all hover:shadow-lg
+    w-${width} h-${height}
+    p-${padding} m-${margin}
+    ${display}
+    ${flex ? `flex flex-${flexDirection} items-${alignItems} justify-${justifyContent}` : ''}
+  `.trim();
+
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg">
+    <div className={cardClasses}>
       {image && (
         <div className="relative h-48 w-full">
           <img
@@ -10,11 +41,11 @@ export function Card({ title, description, image, tags, action }) {
           />
         </div>
       )}
-      <div className="p-6">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+      <div className={`${padding === '0' ? 'p-6' : ''}`}>
+        <h3 className={`text-${titleSize} font-${fontWeight} text-gray-900 dark:text-white mb-2`}>
           {title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-300 mb-4">
+        <p className={`text-${descriptionSize} text-gray-600 dark:text-gray-300 mb-4`}>
           {description}
         </p>
         {tags && tags.length > 0 && (

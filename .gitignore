@@ -11,6 +11,9 @@ tests/
 dist/
 build/
 
+# Logs
+src/
+
 # Environment
 .env
 .env.local
