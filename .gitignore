@@ -10,6 +10,10 @@ coverage/
 dist/
 build/
 
+# Development
+src/
+tests/
+
 # Misc
 .DS_Store
 .env
