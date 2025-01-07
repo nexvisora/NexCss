@@ -5,17 +5,13 @@ node_modules/
 
 # Testing
 coverage/
+tests/
 
 # Production
 dist/
 build/
 
-# Development
-src/
-tests/
-
-# Misc
-.DS_Store
+# Environment
 .env
 .env.local
 .env.development.local
@@ -34,4 +30,5 @@ yarn-error.log*
 *.swo
 
 # OS
+.DS_Store
 Thumbs.db
