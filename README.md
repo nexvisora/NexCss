@@ -1,133 +1,243 @@
-# NexCSS
+# NexCSS Framework 🎨
 
-[![npm version](https://badge.fury.io/js/nexcss.svg)](https://badge.fury.io/js/nexcss)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Downloads](https://img.shields.io/npm/dm/nexcss.svg)](https://www.npmjs.com/package/nexcss)
+<div align="center">
+  <img src="assets/nexcss-logo.png" alt="NexCSS Logo" width="200">
+  <p><em>The Next Evolution of Utility-First CSS</em></p>
+</div>
 
-A modern utility-first CSS framework with advanced features and framework integration.
+[![npm version](https://img.shields.io/npm/v/nexcss-framework.svg)](https://www.npmjs.com/package/nexcss-framework)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Downloads](https://img.shields.io/npm/dm/nexcss-framework.svg)](https://www.npmjs.com/package/nexcss-framework)
+[![GitHub stars](https://img.shields.io/github/stars/nexcss/nexcss.svg)](https://github.com/nexcss/nexcss/stargazers)
+[![Build Status](https://github.com/nexcss/nexcss/workflows/CI/badge.svg)](https://github.com/nexcss/nexcss/actions)
 
-## Key Features
+## 🚀 What's New in v1.1.0
 
-- **Utility-First:** Write styles directly in your markup with atomic classes
-- **Performance:** Zero runtime overhead, only ship what you use
-- **Extensible:** Robust plugin system for custom functionality
-- **Dark Mode:** Built-in dark mode support with easy toggles
-- **Responsive:** Mobile-first design with intuitive breakpoints
-- **Animations:** Rich set of pre-built animations and transitions
-- **Developer Experience:** Comprehensive tooling and IDE support
-- **Modern CSS:** Leverages latest CSS features via PostCSS
+### ✨ Major Features
 
-## Why NexCSS?
-
-- **Modern & Lightweight:** Built for modern web development without bloat
-- **Framework Agnostic:** Works with any JavaScript framework or vanilla HTML
-- **Developer First:** Excellent documentation and developer experience
-- **Community Driven:** Active community and regular updates
-
-## Installation
-
-### Method 1: NPM (Recommended)
-```bash
-# Create a new project directory and initialize
-mkdir my-nexcss-project
-cd my-nexcss-project
-npm init -y
-
-# Install NexCSS and its dependencies
-npm install nexcss-framework postcss postcss-cli --save-dev
-```
-
-### Method 2: CDN
-```html
-<link href="https://unpkg.com/nexcss-framework@latest/dist/nexcss.min.css" rel="stylesheet">
-```
-
-## Usage
-
-### 1. Initialize NexCSS
-```bash
-npx nexcss init
-```
-
-### 2. Configure NexCSS
-Create or update `nexcss.config.js`:
-
-```javascript
-/** @type {import('nexcss-framework').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx,vue,svelte}",
-  ],
-  theme: {
-    extend: {
-      // Your custom theme extensions
-      colors: {
-        primary: '#3b82f6',
-        secondary: '#6b7280',
-      },
-    },
-  },
-  plugins: [],
-  darkMode: 'class', // or 'media'
-}
-```
-
-### 3. Set up your CSS
-Create a `styles.css` file:
-
-```css
-/* Import NexCSS core styles */
-@import 'nexcss-framework/base';
-@import 'nexcss-framework/components';
-@import 'nexcss-framework/utilities';
-
-/* Your custom styles here */
-```
-
-### 4. Use in your HTML/JavaScript
+#### 🎯 Border Radius System
+Advanced border radius utilities with logical properties and individual corner control.
 
 ```html
-<!-- HTML Example -->
-<div class="container mx-auto p-4">
-  <h1 class="text-4xl font-bold text-primary dark:text-white">
-    Hello NexCSS!
-  </h1>
-  <p class="mt-2 text-gray-600 dark:text-gray-300">
-    Start building with utility classes
-  </p>
+<!-- Modern border radius system -->
+<div class="rounded-lg hover:rounded-none transition-radius">
+  Animated corners
+</div>
+
+<!-- Logical properties for RTL support -->
+<div class="rounded-s-lg rounded-e-sm">
+  RTL-aware corners
+</div>
+
+<!-- Individual corner control -->
+<div class="rounded-tl-xl rounded-br-xl">
+  Diagonal corners
 </div>
 ```
 
-```javascript
-// React Example
-export default function App() {
-  return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
-      <div className="container mx-auto p-4">
-        <h1 className="text-4xl font-bold text-primary dark:text-white">
-          Hello NexCSS!
-        </h1>
-      </div>
-    </div>
-  );
-}
+#### 🌫️ Advanced Blur Effects
+Comprehensive blur utilities with backdrop support and performance optimizations.
+
+```html
+<!-- Dynamic blur effects -->
+<div class="blur-sm hover:blur-none transition-all">
+  Hover to focus
+</div>
+
+<!-- Glass morphism -->
+<div class="backdrop-blur-md bg-white/30">
+  <h2 class="text-shadow-sm">Frosted Glass</h2>
+</div>
+
+<!-- Performance optimized -->
+<div class="blur-sm will-change-transform">
+  Optimized rendering
+</div>
 ```
 
-### 5. Build Process
-Add these scripts to your `package.json`:
+#### 🎭 Arbitrary Values & CSS Variables
+Powerful arbitrary value system with type safety and dynamic variables.
 
-```json
-{
-  "scripts": {
-    "build:css": "postcss styles.css -o dist/styles.css",
-    "watch:css": "postcss styles.css -o dist/styles.css --watch"
-  }
-}
+```html
+<!-- Type-safe arbitrary values -->
+<div class="[--custom-color:theme(colors.blue.500)]">
+  Theme-aware variables
+</div>
+
+<!-- Complex animations -->
+<div class="[animation:bounce_2s_ease-in-out_infinite]">
+  Custom animation
+</div>
+
+<!-- Responsive design system -->
+<div class="[--cols:1] md:[--cols:2] lg:[--cols:3]"
+     style="grid-template-columns: repeat(var(--cols), minmax(0, 1fr))">
+  Responsive grid
+</div>
 ```
 
-Run the build:
+### 🛠️ Advanced Features
+
+#### 🎨 Color Management
+```html
+<!-- Advanced color utilities -->
+<div class="text-[color:var(--brand)] hover:text-[color:var(--brand-hover)]">
+  Dynamic branding
+</div>
+
+<!-- Color mixing -->
+<div class="bg-[color-mix(in_srgb,var(--primary)_70%,var(--accent))]">
+  Blended colors
+</div>
+```
+
+#### 📱 Responsive Design
+```html
+<!-- Container queries -->
+<div class="@container">
+  <div class="@lg:text-2xl @sm:text-base">
+    Container-based sizing
+  </div>
+</div>
+
+<!-- Advanced breakpoints -->
+<div class="sm:hidden md:(grid grid-cols-2) lg:(grid grid-cols-3)">
+  Progressive enhancement
+</div>
+```
+
+#### 🌙 Dark Mode
+```html
+<!-- System preference -->
+<div class="dark:bg-gray-900 dark:text-white">
+  Automatic dark mode
+</div>
+
+<!-- Custom color schemes -->
+<div class="light:bg-[#fafafa] dark:bg-[#0a0a0a]">
+  Theme variants
+</div>
+```
+
+## 🔧 Installation
+
+### Using npm (Recommended)
 ```bash
-npm run build:css
+npm install nexcss-framework
 ```
 
+### Advanced Configuration
+```javascript
+// nexcss.config.js
+export default {
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          DEFAULT: 'var(--brand-color)',
+          hover: 'var(--brand-hover)',
+        },
+      },
+      animation: {
+        'gradient': 'gradient 8s linear infinite',
+      },
+      keyframes: {
+        gradient: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+      },
+    },
+  },
+  plugins: [
+    require('@nexcss/typography'),
+    require('@nexcss/forms'),
+    require('@nexcss/animations'),
+  ],
+}
+```
+
+## 🎯 Usage Examples
+
+### Advanced Components
+```html
+<!-- Card with hover effects -->
+<div class="group relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-500 to-purple-500">
+  <div class="absolute inset-0 bg-black opacity-0 transition-opacity group-hover:opacity-20"></div>
+  <div class="relative p-6">
+    <h3 class="text-white text-xl font-bold">Interactive Card</h3>
+    <p class="text-white/80">With gradient and overlay</p>
+  </div>
+</div>
+
+<!-- Advanced form styling -->
+<form class="space-y-4 [&_input]:rounded-lg [&_input]:border-gray-300 [&_input:focus]:ring-2">
+  <input type="text" class="w-full px-4 py-2 transition-shadow" />
+  <button class="w-full bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-opacity">
+    Submit
+  </button>
+</form>
+```
+
+### Performance Optimizations
+```html
+<!-- Optimized animations -->
+<div class="animate-[slide-in_0.5s_ease-out] will-change-transform">
+  <div class="content-visibility-auto">
+    Optimized content
+  </div>
+</div>
+```
+
+## 🛠️ Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Run tests
+npm test
+
+# Generate documentation
+npm run docs
+```
+
+## 📚 Documentation
+
+Visit our [comprehensive documentation](https://docs.nexcss.com) for:
+- Advanced tutorials
+- API reference
+- Best practices
+- Performance guides
+- Migration guides
+
+## 🤝 Contributing
+
+We love your input! Check out our [Contributing Guide](CONTRIBUTING.md) for ways to get started.
+
+## 📄 License
+
+MIT © [NexCSS Team](LICENSE)
+
+## 💬 Community
+
+- [Discord](https://discord.gg/nexcss)
+- [Twitter](https://twitter.com/nexcss)
+- [GitHub Discussions](https://github.com/nexcss/nexcss/discussions)
+
+---
+
+<div align="center">
+  <p>Built with ❤️ by the NexCSS Team</p>
+  <p>
+    <a href="https://github.com/sponsors/nexcss">Support NexCSS</a> •
+    <a href="https://nexcss.com/blog">Blog</a> •
+    <a href="https://nexcss.com/showcase">Showcase</a>
+  </p>
+</div>
