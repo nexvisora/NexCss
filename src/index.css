@@ -1,0 +1,22 @@
+/* Base styles */
+:root {
+  --primary: #3b82f6;
+  --secondary: #6b7280;
+  --success: #10b981;
+  --danger: #ef4444;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Core utility classes */
+.flex { display: flex; }
+.grid { display: grid; }
+.hidden { display: none; }
+
+/* Import generated utilities */
+@import 'generated-utilities.css';

@@ -1,0 +1,15 @@
+{
+  "name": "nexcss-demo",
+  "version": "1.0.0",
+  "description": "Demo project for NexCSS framework",
+  "scripts": {
+    "build": "postcss styles.css -o dist/styles.css",
+    "watch": "postcss styles.css -o dist/styles.css --watch",
+    "start": "npx serve ."
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "postcss-cli": "^10.1.0"
+  }
+}

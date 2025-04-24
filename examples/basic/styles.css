@@ -1,0 +1,28 @@
+/* Import the base CSS */
+@import '../../dist/index.css';
+
+/* Custom components */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 150ms;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: #1a202c;
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+}
