@@ -1,6 +1,10 @@
-# NexCSS Framework 
+# NexCSS Framework
 
 A modern utility-first CSS framework inspired by Tailwind CSS, providing a comprehensive set of utilities for rapid web development.
+
+[![npm version](https://img.shields.io/npm/v/nexcss-framework.svg)](https://www.npmjs.com/package/nexcss-framework)
+[![CI](https://github.com/username/nexcss-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/username/nexcss-framework/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
 
@@ -9,12 +13,26 @@ A modern utility-first CSS framework inspired by Tailwind CSS, providing a compr
 - 🌙 Dark Mode: Built-in dark mode support
 - ⚡ Performance: Minimal bundle size with tree-shaking support
 - 🎯 Customizable: Easy to customize and extend
+- 🔌 Plugin System: Extend functionality with plugins
+- 🚀 Framework Integration: Works with React, Vue, Svelte, and more
 
 ## Installation
 
 ```bash
 npm install nexcss-framework
-```npm install nexcss-framework postcss autoprefixer
+```
+
+Or with Yarn:
+
+```bash
+yarn add nexcss-framework
+```
+
+Make sure to install the peer dependencies:
+
+```bash
+npm install postcss autoprefixer --save-dev
+```
 
 ## Quick Start
 
@@ -23,18 +41,18 @@ npm install nexcss-framework
 ```javascript
 module.exports = {
   plugins: [
-    require('autoprefixer'),
-    require('nexcss-framework')({
+    require("autoprefixer"),
+    require("nexcss-framework")({
       // Your configuration here
-    })
-  ]
+    }),
+  ],
 };
 ```
 
 2. Import NexCSS in your CSS file:
 
 ```css
-@import 'nexcss-framework';
+@import "nexcss-framework";
 
 /* Your custom CSS here */
 ```
@@ -43,9 +61,7 @@ module.exports = {
 
 ```html
 <div class="flex items-center justify-between p-4">
-  <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
-    Hello NexCSS
-  </h1>
+  <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Hello NexCSS</h1>
   <button class="px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark">
     Click me
   </button>
@@ -85,6 +101,7 @@ Prefix any utility with a breakpoint:
 - `2xl:` - 1536px and up
 
 Example:
+
 ```html
 <div class="w-full md:w-1/2 lg:w-1/3">
   <!-- Content -->
@@ -101,6 +118,51 @@ Prefix utilities with `dark:` for dark mode styles:
 </div>
 ```
 
+## Framework Integration
+
+NexCSS works seamlessly with modern JavaScript frameworks:
+
+### React/Next.js
+
+```jsx
+// pages/_app.js or App.js
+import "nexcss-framework/css";
+
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
+```
+
+### Vue/Nuxt.js
+
+```js
+// nuxt.config.js
+export default {
+  css: ["nexcss-framework/css"],
+};
+```
+
+### SvelteKit
+
+```js
+// app.html
+<link rel="stylesheet" href="node_modules/nexcss-framework/dist/index.css">
+```
+
+## CLI Usage
+
+NexCSS comes with a command-line interface for common tasks:
+
+```bash
+# Initialize a new NexCSS configuration
+npx nexcss init
+
+# Generate custom utility classes
+npx nexcss generate
+```
+
 ## Configuration
 
 Customize your theme in the PostCSS configuration:
@@ -108,38 +170,96 @@ Customize your theme in the PostCSS configuration:
 ```javascript
 module.exports = {
   plugins: [
-    require('nexcss-framework')({
+    require("nexcss-framework")({
       theme: {
         colors: {
-          primary: '#3490dc',
-          secondary: '#ffed4a',
+          primary: "#3490dc",
+          secondary: "#ffed4a",
           // ...
         },
         spacing: {
-          '1': '0.25rem',
-          '2': '0.5rem',
+          1: "0.25rem",
+          2: "0.5rem",
           // ...
         },
         // ...
       },
       variants: {
         extend: {
-          backgroundColor: ['hover', 'focus', 'dark'],
+          backgroundColor: ["hover", "focus", "dark"],
           // ...
-        }
-      }
-    })
-  ]
+        },
+      },
+    }),
+  ],
 };
 ```
 
 ## Examples
 
-Check out the `example` directory for a complete demo showcasing various utilities and components.
+Check out the `examples` directory for complete demos showcasing various utilities and components:
+
+- Basic usage
+- React/Next.js integration
+- Vue/Nuxt integration
+- SvelteKit integration
+
+## Components
+
+NexCSS includes a growing collection of common components. See [COMPONENTS.md](COMPONENTS.md) for details.
+
+## Plugin System
+
+Extend NexCSS with custom plugins:
+
+```javascript
+// my-plugin.js
+module.exports = function (options) {
+  return {
+    name: "my-custom-plugin",
+    utilities: {
+      ".custom-utility": {
+        property: "value",
+      },
+    },
+  };
+};
+
+// postcss.config.js
+const myPlugin = require("./my-plugin");
+
+module.exports = {
+  plugins: [
+    require("nexcss-framework")({
+      plugins: [
+        myPlugin({
+          /* options */
+        }),
+      ],
+    }),
+  ],
+};
+```
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## CI/CD and Publishing
+
+NexCSS uses GitHub Actions for CI/CD:
+
+- Continuous Integration: All PRs and commits to main branch are tested
+- Automatic Publishing: New versions are automatically published to npm when a GitHub release is created
+
+## Browser Support
+
+NexCSS supports all modern browsers:
+
+- Chrome (last 2 versions)
+- Firefox (last 2 versions)
+- Safari (last 2 versions)
+- Edge (last 2 versions)
 
 ## License
 
