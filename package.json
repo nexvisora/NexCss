@@ -29,7 +29,7 @@
     "prebuild": "npm run clean",
     "build": "node scripts/build.js",
     "dev": "node scripts/build.js --watch",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --passWithNoTests --forceExit --silent",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --passWithNoTests --forceExit --silent --detectOpenHandles",
     "prepare": "npm run build"
   },
   "peerDependencies": {

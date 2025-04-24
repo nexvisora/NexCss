@@ -35,6 +35,6 @@ jobs:
         run: npm run build
 
       - name: Run tests
-        run: npm test
+        run: npm test -- --detectOpenHandles
         env:
           NODE_OPTIONS: --experimental-vm-modules
