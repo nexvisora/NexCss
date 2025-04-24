@@ -24,7 +24,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install -g npm@latest
+          if [[ "${{ matrix.node-version }}" == "18.x" ]]; then
+            npm install -g npm@10.8.2
+          else
+            npm install -g npm@latest
+          fi
           npm ci
 
       - name: Build

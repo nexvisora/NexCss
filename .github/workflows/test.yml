@@ -20,6 +20,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+      - name: Install compatible npm version
+        run: |
+          if [[ "${{ matrix.node-version }}" == "18.x" ]]; then
+            npm install -g npm@10.8.2
+          elif [[ "${{ matrix.node-version }}" == "16.x" ]]; then
+            npm install -g npm@8.19.4
+          else
+            npm install -g npm@latest
+          fi
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
