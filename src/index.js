@@ -1,6 +1,6 @@
-const postcss = require('postcss');
-const { generateUtilityClasses, createResponsiveClasses, generateDarkModeClasses, generateHoverClasses } = require('./utilities.js');
-const { config } = require('./config.js');
+import postcss from 'postcss';
+import { generateUtilityClasses, createResponsiveClasses, generateDarkModeClasses, generateHoverClasses } from './utilities.js';
+import { config } from './config.js';
 
 // Main PostCSS plugin
 const nexcss = (options = {}) => {
@@ -35,7 +35,4 @@ const nexcss = (options = {}) => {
 nexcss.postcss = true;
 
 // Export the plugin
-module.exports = nexcss;
-module.exports.config = config;
-module.exports.generateUtilityClasses = generateUtilityClasses;
-module.exports.createResponsiveClasses = createResponsiveClasses;
+export default nexcss;

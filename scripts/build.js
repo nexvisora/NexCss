@@ -1,7 +1,9 @@
-const { build } = require('esbuild');
-const { join, dirname } = require('path');
-const fs = require('fs/promises');
+import { build } from 'esbuild';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { promises as fs } from 'fs';
 
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const rootDir = join(__dirname, '..');
 

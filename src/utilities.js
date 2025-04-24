@@ -1,4 +1,4 @@
-const { config } = require('./config.js');
+import { config } from './config.js';
 
 // Core utility generators
 function createUtilityClass(className, styles) {
@@ -374,13 +374,9 @@ function generateHoverUtilities(baseUtilities) {
     .join('\n');
 };
 
-module.exports = {
+export {
   generateUtilityClasses,
   createResponsiveClasses,
   generateDarkModeClasses,
-  generateHoverClasses,
-  generateAllUtilities,
-  createResponsiveUtilities,
-  generateDarkModeUtilities,
-  generateHoverUtilities
+  generateHoverClasses
 };
