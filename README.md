@@ -1,8 +1,8 @@
-# AeroStyle Framework
+# AeroCSS Framework
 
 A modern utility-first CSS framework inspired by Tailwind CSS, providing a comprehensive set of utilities for rapid web development.
 
-[![npm version](https://img.shields.io/npm/v/AeroStyle.svg)](https://www.npmjs.com/package/AeroStyle)
+[![npm version](https://img.shields.io/npm/v/AeroCSS.svg)](https://www.npmjs.com/package/AeroCSS)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -18,13 +18,13 @@ A modern utility-first CSS framework inspired by Tailwind CSS, providing a compr
 ## Installation
 
 ```bash
-npm install AeroStyle
+npm install AeroCSS
 ```
 
 Or with Yarn:
 
 ```bash
-yarn add AeroStyle
+yarn add AeroCSS
 ```
 
 Make sure to install the peer dependencies:
@@ -41,17 +41,17 @@ npm install postcss autoprefixer --save-dev
 module.exports = {
   plugins: [
     require("autoprefixer"),
-    require("AeroStyle")({
+    require("AeroCSS")({
       // Your configuration here
     }),
   ],
 };
 ```
 
-2. Import AeroStyle in your CSS file:
+2. Import AeroCSS in your CSS file:
 
 ```css
-@import "AeroStyle";
+@import "AeroCSS";
 
 /* Your custom CSS here */
 ```
@@ -61,7 +61,7 @@ module.exports = {
 ```html
 <div class="flex items-center justify-between p-4">
   <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
-    Hello AeroStyle
+    Hello AeroCSS
   </h1>
   <button class="px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark">
     Click me
@@ -121,13 +121,13 @@ Prefix utilities with `dark:` for dark mode styles:
 
 ## Framework Integration
 
-AeroStyle works seamlessly with modern JavaScript frameworks:
+AeroCSS works seamlessly with modern JavaScript frameworks:
 
 ### React/Next.js
 
 ```jsx
 // pages/_app.js or App.js
-import "AeroStyle/css";
+import "AeroCSS/css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
@@ -141,7 +141,7 @@ export default MyApp;
 ```js
 // nuxt.config.js
 export default {
-  css: ["AeroStyle/css"],
+  css: ["AeroCSS/css"],
 };
 ```
 
@@ -149,19 +149,19 @@ export default {
 
 ```js
 // app.html
-<link rel="stylesheet" href="node_modules/AeroStyle/dist/index.css">
+<link rel="stylesheet" href="node_modules/AeroCSS/dist/index.css">
 ```
 
 ## CLI Usage
 
-AeroStyle comes with a command-line interface for common tasks:
+AeroCSS comes with a command-line interface for common tasks:
 
 ```bash
-# Initialize a new AeroStyle configuration
-npx aerostyle init
+# Initialize a new AeroCSS configuration
+npx aerocss init
 
 # Generate custom utility classes
-npx aerostyle generate
+npx aerocss generate
 ```
 
 ## Configuration
@@ -171,7 +171,7 @@ Customize your theme in the PostCSS configuration:
 ```javascript
 module.exports = {
   plugins: [
-    require("AeroStyle")({
+    require("AeroCSS")({
       theme: {
         colors: {
           primary: "#3490dc",
@@ -207,11 +207,11 @@ Check out the `examples` directory for complete demos showcasing various utiliti
 
 ## Components
 
-AeroStyle includes a growing collection of common components. See [COMPONENTS.md](COMPONENTS.md) for details.
+AeroCSS includes a growing collection of common components. See [COMPONENTS.md](COMPONENTS.md) for details.
 
 ## Plugin System
 
-Extend AeroStyle with custom plugins:
+Extend AeroCSS with custom plugins:
 
 ```javascript
 // my-plugin.js
@@ -231,7 +231,7 @@ const myPlugin = require("./my-plugin");
 
 module.exports = {
   plugins: [
-    require("AeroStyle")({
+    require("AeroCSS")({
       plugins: [
         myPlugin({
           /* options */
@@ -248,14 +248,14 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 
 ## CI/CD and Publishing
 
-AeroStyle uses GitHub Actions for CI/CD:
+AeroCSS uses GitHub Actions for CI/CD:
 
 - Continuous Integration: All PRs and commits to main branch are tested
 - Automatic Publishing: New versions are automatically published to npm when a GitHub release is created
 
 ## Browser Support
 
-AeroStyle supports all modern browsers:
+AeroCSS supports all modern browsers:
 
 - Chrome (last 2 versions)
 - Firefox (last 2 versions)

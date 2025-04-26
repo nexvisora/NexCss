@@ -1,5 +1,5 @@
 {
-  "name": "aerostyle",
+  "name": "aerocss",
   "version": "1.2.3",
   "description": "A modern utility-first CSS framework with advanced features and framework integration",
   "main": "dist/index.js",
@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "bin": {
-    "aerostyle": "scripts/cli.js"
+    "aerocss": "scripts/cli.js"
   },
   "files": [
     "dist",
