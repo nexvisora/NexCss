@@ -1,4 +1,5 @@
-/** @type {import('./src/types').NexCssConfig} */
+// filepath: e:\LiveProject\NexCss\aerostyle.config.js
+/** @type {import('./src/types').AeroStyleConfig} */
 export default {
   content: [
     './src/**/*.{html,js,jsx,ts,tsx}',

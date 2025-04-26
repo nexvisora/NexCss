@@ -32,16 +32,16 @@ const defaultConfig = `module.exports = {
 };`;
 
 const init = () => {
-  const configPath = path.join(process.cwd(), 'nexcss.config.js');
+  const configPath = path.join(process.cwd(), 'aerostyle.config.js');
   
   if (fs.existsSync(configPath)) {
-    console.log('nexcss.config.js already exists');
+    console.log('aerostyle.config.js already exists');
     process.exit(1);
   }
 
   try {
     fs.writeFileSync(configPath, defaultConfig);
-    console.log('Successfully created nexcss.config.js');
+    console.log('Successfully created aerostyle.config.js');
   } catch (error) {
     console.error('Error creating config file:', error);
     process.exit(1);

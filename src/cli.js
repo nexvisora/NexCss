@@ -24,13 +24,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const program = new Command();
 
 program
-  .name('nexcss')
-  .description('NexCSS CLI tool')
+  .name('aerostyle')
+  .description('AeroStyle CLI tool')
   .version('1.0.0');
 
 program
   .command('init')
-  .description('Initialize a new NexCSS project')
+  .description('Initialize a new AeroStyle project')
   .option('-y, --yes', 'Skip prompts and use defaults')
   .option('-t, --template <template>', 'Project template (react, vue, svelte, vanilla)')
   .action(initializeProject);
@@ -38,8 +38,8 @@ program
 program
   .command('build')
   .description('Build the CSS file')
-  .option('-c, --config <path>', 'Path to config file', 'nexcss.config.js')
-  .option('-o, --output <path>', 'Output path', 'dist/nexcss.css')
+  .option('-c, --config <path>', 'Path to config file', 'aerostyle.config.js')
+  .option('-o, --output <path>', 'Output path', 'dist/aerostyle.css')
   .option('-w, --watch', 'Watch for changes')
   .action(async (options) => {
     try {

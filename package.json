@@ -1,13 +1,13 @@
 {
-  "name": "nexcss",
+  "name": "aerostyle",
   "version": "1.2.3",
   "description": "A modern utility-first CSS framework with advanced features and framework integration",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "type": "commonjs",
+  "type": "module",
   "bin": {
-    "nexcss": "scripts/cli.js"
+    "aerostyle": "scripts/cli.js"
   },
   "files": [
     "dist",

@@ -12,8 +12,8 @@ export async function initializeProject() {
   const program = new Command();
 
   program
-    .name('nexcss-init')
-    .description('Initialize a new NexCSS project')
+    .name('aerostyle-init')
+    .description('Initialize a new AeroStyle project')
     .option('-y, --yes', 'Skip prompts and use defaults')
     .option('-t, --template <template>', 'Project template (react, vue, svelte, vanilla)')
     .parse(process.argv);
@@ -74,7 +74,7 @@ export async function initializeProject() {
   // Update package.json
   await updatePackageJson(answers);
 
-  console.log('\nNexCSS project initialized successfully! \n');
+  console.log('\nAeroStyle project initialized successfully! \n');
   console.log('Next steps:');
   console.log('1. Install dependencies:');
   console.log('   npm install');
@@ -84,8 +84,8 @@ export async function initializeProject() {
 }
 
 async function createConfigFiles(answers) {
-  // Create nexcss.config.js
-  const nexcssConfig = `/** @type {import('nexcss').Config} */
+  // Create aerostyle.config.js
+  const aerostyleConfig = `/** @type {import('aerostyle').Config} */
 export default {
   content: [
     "./index.html",
@@ -101,12 +101,12 @@ export default {
   darkMode: ${answers.features.includes('darkMode') ? '\'class\'' : 'false'}
 }`;
 
-  await fs.writeFile('nexcss.config.js', nexcssConfig);
+  await fs.writeFile('aerostyle.config.js', aerostyleConfig);
 
   // Create postcss.config.js
   const postcssConfig = `export default {
   plugins: {
-    'nexcss': {},
+    'aerostyle': {},
     'autoprefixer': {},
     'cssnano': process.env.NODE_ENV === 'production' ? {} : false
   }
@@ -116,9 +116,9 @@ export default {
 }
 
 async function createEntryFile(answers) {
-  const css = `@nexcss base;
-@nexcss components;
-@nexcss utilities;
+  const css = `@aerostyle base;
+@aerostyle components;
+@aerostyle utilities;
 
 ${answers.features.includes('typography') ? `
 /* Custom typography styles */
@@ -167,7 +167,7 @@ async function createExampleComponent(answers) {
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 ${
   answers.features.includes('animations') ? 'animate-fade-in' : ''
 }">
-          Welcome to NexCSS
+          Welcome to AeroStyle
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
           Start building your awesome project!
@@ -185,7 +185,7 @@ async function createExampleComponent(answers) {
       <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4 ${
   answers.features.includes('animations') ? 'animate-fade-in' : ''
 }">
-        Welcome to NexCSS
+        Welcome to AeroStyle
       </h1>
       <p class="text-lg text-gray-700 dark:text-gray-300">
         Start building your awesome project!
@@ -207,7 +207,7 @@ export default {
     <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4 ${
   answers.features.includes('animations') ? 'animate-fade-in' : ''
 }">
-      Welcome to NexCSS
+      Welcome to AeroStyle
     </h1>
     <p class="text-lg text-gray-700 dark:text-gray-300">
       Start building your awesome project!
@@ -226,7 +226,7 @@ ${answers.typescript ? '<script lang="ts">' : '<script>'}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NexCSS Example</title>
+  <title>AeroStyle Example</title>
   <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
@@ -235,7 +235,7 @@ ${answers.typescript ? '<script lang="ts">' : '<script>'}
       <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4 ${
   answers.features.includes('animations') ? 'animate-fade-in' : ''
 }">
-        Welcome to NexCSS
+        Welcome to AeroStyle
       </h1>
       <p class="text-lg text-gray-700 dark:text-gray-300">
         Start building your awesome project!
@@ -251,7 +251,7 @@ ${answers.typescript ? '<script lang="ts">' : '<script>'}
 
 async function updatePackageJson(answers) {
   const packageJson = {
-    name: 'nexcss-project',
+    name: 'aerostyle-project',
     private: true,
     version: '0.0.0',
     type: 'module',
@@ -261,7 +261,7 @@ async function updatePackageJson(answers) {
       'preview': 'vite preview'
     },
     dependencies: {
-      'nexcss': 'latest'
+      'aerostyle': 'latest'
     },
     devDependencies: {
       'autoprefixer': '^10.4.16',

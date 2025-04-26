@@ -1,4 +1,4 @@
-// Configuration settings for NexCss
+// Configuration settings for AeroStyle
 const config = {
   theme: {
     colors: {

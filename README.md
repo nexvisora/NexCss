@@ -1,9 +1,8 @@
-# NexCSS Framework
+# AeroStyle Framework
 
 A modern utility-first CSS framework inspired by Tailwind CSS, providing a comprehensive set of utilities for rapid web development.
 
-[![npm version](https://img.shields.io/npm/v/nexcss-framework.svg)](https://www.npmjs.com/package/nexcss-framework)
-[![CI](https://github.com/username/nexcss-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/username/nexcss-framework/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/AeroStyle.svg)](https://www.npmjs.com/package/AeroStyle)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -19,13 +18,13 @@ A modern utility-first CSS framework inspired by Tailwind CSS, providing a compr
 ## Installation
 
 ```bash
-npm install nexcss-framework
+npm install AeroStyle
 ```
 
 Or with Yarn:
 
 ```bash
-yarn add nexcss-framework
+yarn add AeroStyle
 ```
 
 Make sure to install the peer dependencies:
@@ -42,17 +41,17 @@ npm install postcss autoprefixer --save-dev
 module.exports = {
   plugins: [
     require("autoprefixer"),
-    require("nexcss-framework")({
+    require("AeroStyle")({
       // Your configuration here
     }),
   ],
 };
 ```
 
-2. Import NexCSS in your CSS file:
+2. Import AeroStyle in your CSS file:
 
 ```css
-@import "nexcss-framework";
+@import "AeroStyle";
 
 /* Your custom CSS here */
 ```
@@ -61,7 +60,9 @@ module.exports = {
 
 ```html
 <div class="flex items-center justify-between p-4">
-  <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Hello NexCSS</h1>
+  <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
+    Hello AeroStyle
+  </h1>
   <button class="px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark">
     Click me
   </button>
@@ -120,13 +121,13 @@ Prefix utilities with `dark:` for dark mode styles:
 
 ## Framework Integration
 
-NexCSS works seamlessly with modern JavaScript frameworks:
+AeroStyle works seamlessly with modern JavaScript frameworks:
 
 ### React/Next.js
 
 ```jsx
 // pages/_app.js or App.js
-import "nexcss-framework/css";
+import "AeroStyle/css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
@@ -140,7 +141,7 @@ export default MyApp;
 ```js
 // nuxt.config.js
 export default {
-  css: ["nexcss-framework/css"],
+  css: ["AeroStyle/css"],
 };
 ```
 
@@ -148,19 +149,19 @@ export default {
 
 ```js
 // app.html
-<link rel="stylesheet" href="node_modules/nexcss-framework/dist/index.css">
+<link rel="stylesheet" href="node_modules/AeroStyle/dist/index.css">
 ```
 
 ## CLI Usage
 
-NexCSS comes with a command-line interface for common tasks:
+AeroStyle comes with a command-line interface for common tasks:
 
 ```bash
-# Initialize a new NexCSS configuration
-npx nexcss init
+# Initialize a new AeroStyle configuration
+npx aerostyle init
 
 # Generate custom utility classes
-npx nexcss generate
+npx aerostyle generate
 ```
 
 ## Configuration
@@ -170,7 +171,7 @@ Customize your theme in the PostCSS configuration:
 ```javascript
 module.exports = {
   plugins: [
-    require("nexcss-framework")({
+    require("AeroStyle")({
       theme: {
         colors: {
           primary: "#3490dc",
@@ -206,11 +207,11 @@ Check out the `examples` directory for complete demos showcasing various utiliti
 
 ## Components
 
-NexCSS includes a growing collection of common components. See [COMPONENTS.md](COMPONENTS.md) for details.
+AeroStyle includes a growing collection of common components. See [COMPONENTS.md](COMPONENTS.md) for details.
 
 ## Plugin System
 
-Extend NexCSS with custom plugins:
+Extend AeroStyle with custom plugins:
 
 ```javascript
 // my-plugin.js
@@ -230,7 +231,7 @@ const myPlugin = require("./my-plugin");
 
 module.exports = {
   plugins: [
-    require("nexcss-framework")({
+    require("AeroStyle")({
       plugins: [
         myPlugin({
           /* options */
@@ -247,14 +248,14 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 
 ## CI/CD and Publishing
 
-NexCSS uses GitHub Actions for CI/CD:
+AeroStyle uses GitHub Actions for CI/CD:
 
 - Continuous Integration: All PRs and commits to main branch are tested
 - Automatic Publishing: New versions are automatically published to npm when a GitHub release is created
 
 ## Browser Support
 
-NexCSS supports all modern browsers:
+AeroStyle supports all modern browsers:
 
 - Chrome (last 2 versions)
 - Firefox (last 2 versions)
