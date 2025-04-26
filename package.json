@@ -1,11 +1,11 @@
 {
   "name": "nexcss",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A modern utility-first CSS framework with advanced features and framework integration",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "type": "module",
+  "type": "commonjs",
   "bin": {
     "nexcss": "scripts/cli.js"
   },
@@ -21,7 +21,7 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./postcss": "./dist/postcss.js",
+    "./postcss": "./dist/index.js",
     "./css": "./dist/index.css"
   },
   "scripts": {
@@ -30,7 +30,8 @@
     "build": "node scripts/build.js",
     "dev": "node scripts/build.js --watch",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --passWithNoTests --forceExit --silent --detectOpenHandles",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "peerDependencies": {
     "postcss": "^8.4.0"
@@ -54,6 +55,14 @@
     "responsive",
     "dark-mode"
   ],
-  "author": "Your Name",
-  "license": "MIT"
+  "author": "NexVisora",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nexvisora/NexCss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nexvisora/NexCss/issues"
+  },
+  "homepage": "https://github.com/nexvisora/NexCss#readme"
 }
