@@ -1,6 +1,6 @@
 {
-  "name": "nexcss-framework",
-  "version": "1.2.1",
+  "name": "nexcss",
+  "version": "1.2.2",
   "description": "A modern utility-first CSS framework with advanced features and framework integration",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
